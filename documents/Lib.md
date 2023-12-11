@@ -1,0 +1,1 @@
+- https://www.figma.com/file/rwhE5CZLgcJlOamZ7PAbeQ/kicket?type=design&node-id=480%3A24059&mode=design&t=yG4u54D6QJ4XcVG9-1
