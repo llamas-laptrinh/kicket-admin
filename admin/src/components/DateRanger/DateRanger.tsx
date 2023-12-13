@@ -35,7 +35,7 @@ const DateRanger: React.FC = () => {
     <Space>
       <DatePicker
         onChange={handleStartDateChange}
-        placeholder="Ngày bắt đầu"
+        placeholder="Start Date"
         style={datePickerStyle}
         suffixIcon={<CalendarOutlined style={{ color: 'black', fontSize: '24px', borderRadius: '50%' }} />}
       />
@@ -44,7 +44,7 @@ const DateRanger: React.FC = () => {
       </div>
       <DatePicker
         onChange={handleEndDateChange}
-        placeholder="Ngày kết thúc"
+        placeholder="End Date"
         style={datePickerStyle}
         suffixIcon={<CalendarOutlined style={{ color: 'black', fontSize: '24px' }} />}
       />
