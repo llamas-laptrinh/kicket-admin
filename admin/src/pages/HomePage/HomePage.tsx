@@ -1,8 +1,9 @@
 import React from 'react';
+import MyTabs from '../../components/TabsComponent/TabsComponent';
 
 const HomePage: React.FC = () => {
   return (
-    <div>HomePage</div>
+    <div> HomePage <MyTabs/></div>
   );
 }
 
