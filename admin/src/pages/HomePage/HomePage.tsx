@@ -1,6 +1,6 @@
 import React from 'react';
-import MyTabs from '../../components/TabsComponent/TabsComponent';
-import DateRanger from '../../components/DateRanger/DateRanger';
+import MyTabs from '../../components/TabsComponent';
+import DateRanger from '../../components/DateRanger';
 
 const HomePage: React.FC = () => {
   return (
