@@ -1,11 +1,11 @@
-import HomePage from "../pages/HomePage/HomePage";
+import DashBoad from "../pages/dashboard";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import Tabs from "../pages/Tabs/Tabs"
 
 export const routes = [
     {
         path: '/',
-        page: HomePage,
+        page: DashBoad,
     },
     {
         path: '/tabs',

@@ -2,6 +2,7 @@ import React from 'react';
 import MyTabs from '../../components/Tabs';
 import DateRanger from '../../components/DateRanger';
 import SearchBar from '../../components/SeachBar'
+import ButtonSlider from '../../components/ButtonSlider'
 import { SearchOutlined } from '@ant-design/icons';
 
 const HomePage: React.FC = () => {
@@ -15,6 +16,20 @@ const HomePage: React.FC = () => {
     backgroundColor: '#F2F4F8',
   }; 
 
+  const styleButton: React.CSSProperties = {
+          width: '224px',
+          height: '48px',
+          gap: '5px',
+          padding: '12px 8px 12px 8px',
+          alignItems: 'center',
+          display: 'flex',
+          justifyContent: 'space-around',
+  }
+
+  const handlerClickOnButton = () => {
+
+  }
+  
   return (
     <div>
       HomePage <MyTabs /> <DateRanger /> <br />
@@ -24,6 +39,15 @@ const HomePage: React.FC = () => {
         style={styleSearch}
         prefix={<SearchOutlined />} 
       />
+      <ButtonSlider
+        onClick={handlerClickOnButton}
+        icon={<SearchOutlined style={{ marginRight: '-30px'}} />}
+        style={styleButton}
+        isShowNotification={true}
+        isShowDropdown={true}
+      >
+        chao ban
+      </ButtonSlider>
     </div>
   );
 }

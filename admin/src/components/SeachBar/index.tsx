@@ -1,14 +1,14 @@
 import { Input } from 'antd';
 import React from 'react';
 
-interface IndexProps {
+interface SeachBarProps {
     size?: 'small' | 'middle' | 'large';
     style?: React.CSSProperties;
     prefix?: React.ReactNode;
     placeholder?: string;
 }
 
-const Index: React.FC <IndexProps> = ({size, placeholder,  style, prefix, ...rests}) => {
+const Index: React.FC <SeachBarProps> = ({size, placeholder,  style, prefix, ...rests}) => {
   return (
     <>
      <Input
