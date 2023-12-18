@@ -1,11 +1,11 @@
 import React from 'react';
 import { Layout } from 'antd';
-const { Header, Sider, Content } = Layout;
+const { Header, Footer, Sider, Content } = Layout;
 
 const Index: React.FC = () => (
   <Layout style={{ minHeight: '100vh' }}>
     <Sider width={250} style={{ backgroundColor: '#1677ff' }}>
-      Slider
+      Sider
     </Sider>
     <Layout>
       <Header style={{ backgroundColor: '#4096ff', color: '#fff', textAlign: 'center' }}>
@@ -14,6 +14,9 @@ const Index: React.FC = () => (
       <Content style={{ padding: '24px', minHeight: 280 }}>
         Content
       </Content>
+      <Footer style={{ backgroundColor: '#4096ff', color: '#fff', textAlign: 'center' }}>
+        Footer
+      </Footer>
     </Layout>
   </Layout>
 );
