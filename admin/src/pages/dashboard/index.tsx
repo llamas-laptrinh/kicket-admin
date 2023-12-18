@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 const Index: React.FC = () => (
   <Layout style={{ minHeight: '100vh' }}>
@@ -14,9 +14,6 @@ const Index: React.FC = () => (
       <Content style={{ padding: '24px', minHeight: 280 }}>
         Content
       </Content>
-      <Footer style={{ backgroundColor: '#4096ff', color: '#fff', textAlign: 'center' }}>
-        Footer
-      </Footer>
     </Layout>
   </Layout>
 );
