@@ -1,9 +1,9 @@
-import Infocard from "./pages/dashboard/Infocard";
-
+import "./App.css";
+import Index from "./router";
 function App() {
   return (
     <>
-      <Infocard />
+      <Index />
     </>
   );
 }
