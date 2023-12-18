@@ -1,8 +1,0 @@
-:where(.css-dev-only-do-not-override-p7e5j5).ant-input-affix-wrapper >input.ant-input {
-    padding: 0;
-    font-size: inherit;
-    border: none;
-    border-radius: 0;
-    outline: none;
-    background-color: #F2F4F8;
-}

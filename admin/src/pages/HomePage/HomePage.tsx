@@ -3,7 +3,6 @@ import MyTabs from '../../components/Tabs';
 import DateRanger from '../../components/DateRanger';
 import SearchBar from '../../components/SeachBar'
 import { SearchOutlined } from '@ant-design/icons';
-import './style.css'
 
 const HomePage: React.FC = () => {
   const styleSearch: React.CSSProperties = {
