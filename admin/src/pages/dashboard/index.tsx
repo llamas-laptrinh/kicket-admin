@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useLayoutEffect } from 'react';
+/* eslint-disable prefer-const */
+import React, { useEffect, useState } from 'react';
 import {
     DesktopOutlined,
     FileOutlined,
@@ -91,49 +92,49 @@ const Overview: React.FC = () => {
             category: "Health",
             value: 5,
             columnSettings: {
-                fill: chart.get("colors").next()
+                fill: chart.get("colors")?.next()
             }
         }, {
             category: "Career",
             value: 4,
             columnSettings: {
-                fill: chart.get("colors").next()
+                fill: chart.get("colors")?.next()
             }
         }, {
             category: "Love",
             value: 7,
             columnSettings: {
-                fill: chart.get("colors").next()
+                fill: chart.get("colors")?.next()
             }
         }, {
             category: "Spirituality",
             value: 9,
             columnSettings: {
-                fill: chart.get("colors").next()
+                fill: chart.get("colors")?.next()
             }
         }, {
             category: "Family",
             value: 3,
             columnSettings: {
-                fill: chart.get("colors").next()
+                fill: chart.get("colors")?.next()
             }
         }, {
             category: "Money",
             value: 3,
             columnSettings: {
-                fill: chart.get("colors").next()
+                fill: chart.get("colors")?.next()
             }
         }, {
             category: "Fun",
             value: 5,
             columnSettings: {
-                fill: chart.get("colors").next()
+                fill: chart.get("colors")?.next()
             }
         }, {
             category: "Friends",
             value: 10,
             columnSettings: {
-                fill: chart.get("colors").next()
+                fill: chart.get("colors")?.next()
             }
         }];
 
@@ -141,30 +142,28 @@ const Overview: React.FC = () => {
         xAxis.data.setAll(data);
 
         // Animate chart
-        // https://www.amcharts.com/docs/v5/concepts/animations/#Initial_animation
         series.appear(1000);
         chart.appear(1000, 100);
 
-        // Function for updating value
-        function setValue(index, value) {
+        // function setValue(index, value) {
 
-            // Set value
-            let row = data[index];
-            row.value = value;
-            console.log(row)
-            series.data.setIndex(index, {
-                category: row.category,
-                value: value,
-                columnSettings: row.columnSettings
-            });
+        //     // Set value
+        //     let row = data[index];
+        //     row.value = value;
+        //     console.log(row)
+        //     series.data.setIndex(index, {
+        //         category: row.category,
+        //         value: value,
+        //         columnSettings: row.columnSettings
+        //     });
 
-            // Reveal next question
-            let areas = document.getElementsByClassName("area");
-            for (var i = 0; i < areas.length; i++) {
-                areas[i].style.display = (index + 1) === i ? "block" : "none";
-            }
+        //     // Reveal next question
+        //     let areas = document.getElementsByClassName("area");
+        //     for (var i = 0; i < areas.length; i++) {
+        //         areas[i].style.display = (index + 1) === i ? "block" : "none";
+        //     }
 
-        }
+        // }
         return () => {
             root.dispose();
         };
@@ -244,7 +243,7 @@ const Overview: React.FC = () => {
 
 
         // Set clicking on "water" to zoom out
-        chart.chartContainer.get("background").events.on("click", function () {
+        chart.chartContainer.get("background")?.events.on("click", function () {
             chart.goHome();
         })
 
@@ -341,7 +340,7 @@ const Overview: React.FC = () => {
 
         axisDataItem.set("value", 50);
         bullet.get("sprite").on("rotation", function () {
-            let value = axisDataItem.get("value");
+            let value = axisDataItem.get("value") || 0;
             label.set("text", Math.round(value).toString() + "%");
         });
 
@@ -382,12 +381,12 @@ const Overview: React.FC = () => {
             })
         );
 
-        axisRange0.get("axisFill").setAll({
+        axisRange0.get("axisFill")?.setAll({
             visible: true,
             fill: colorSet.getIndex(0)
         });
 
-        axisRange0.get("label").setAll({
+        axisRange0.get("label")?.setAll({
             forceHidden: true
         });
 
@@ -399,12 +398,12 @@ const Overview: React.FC = () => {
             })
         );
 
-        axisRange1.get("axisFill").setAll({
+        axisRange1.get("axisFill")?.setAll({
             visible: true,
             fill: colorSet.getIndex(4)
         });
 
-        axisRange1.get("label").setAll({
+        axisRange1.get("label")?.setAll({
             forceHidden: true
         });
 
