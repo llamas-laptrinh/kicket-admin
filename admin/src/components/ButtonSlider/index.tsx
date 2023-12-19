@@ -5,9 +5,10 @@ import { DownOutlined } from '@ant-design/icons';
 interface ButtonSliderProps {
     type?: 'primary' | 'default' | 'dashed' | 'text' | 'link';
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
-    children?: React.ReactNode;
     icon?: React.ReactNode;
     style?: React.CSSProperties;
+    styleTextButton?: React.CSSProperties;
+    textbutton?: React.ReactNode
     isShowNotification?: boolean;
     isShowDropdown?: boolean;
 }
@@ -15,10 +16,11 @@ interface ButtonSliderProps {
 const Index: React.FC<ButtonSliderProps> = ({
     type,
     onClick,
-    children,
     icon,
     isShowDropdown = false,
     isShowNotification = false,
+    styleTextButton,
+    textbutton,
     ...rests
 }) => {
     const renderDropdown = () => {
@@ -60,7 +62,7 @@ const Index: React.FC<ButtonSliderProps> = ({
 
     return (
             <Button type={type} onClick={onClick} icon={icon} {...rests}>
-                {children}
+                 <span style={styleTextButton}>{textbutton}</span>
                 {isShowNotification && (
                     <Space>
                         <Badge
