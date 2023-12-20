@@ -17,3 +17,9 @@ export interface polarDataItem {
 }
 
 export interface polarDataItems extends Array<polarDataItem> {}
+
+export interface mapDataItem {
+  id: string;
+  value: number;
+}
+export interface mapDataItems extends Array<mapDataItem> {}
