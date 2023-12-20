@@ -1,69 +1,33 @@
 import React from "react";
-import "/hocreact/kicket-admin/admin/src/App.css";
-
-export default function Infocard() {
+import Styles from "./infocard.module.css";
+type InfoCardPops = {
+  title: string;
+  value: string;
+  precent: string;
+  color: string;
+  background: string;
+};
+export default function Infocard({
+  title,
+  value,
+  precent,
+  color,
+  background,
+}: InfoCardPops) {
   return (
-    <div className="header">
-      <div className="header-card">
-        <p>Users Total</p>
-        <div className="header-infocard">
-          <h1>11.8M</h1>
-          <button>+2,5%</button>
-        </div>
-      </div>
-      <div className="header-card">
-        <p>New Users</p>
-        <div className="header-infocard">
-          <h1>8.236K</h1>
-          <button className="btn">-1,2%</button>
-        </div>
-      </div>
-      <div className="header-card">
-        <p>Active Users</p>
-        <div className="header-infocard">
-          <h1>2.352M</h1>
-          <button>+11%</button>
-        </div>
-      </div>
-      <div className="header-card">
-        <p>New Users</p>
-        <div className="header-infocard">
-          <h1>8K</h1>
-          <button>+5,2%</button>
-        </div>
-      </div>
-    </div>
-
-    // <>
-    // {
-    /* 
-       
-       
-        <Card
-          bordered={false}
-          style={{ width: 400, marginLeft: "60px", border: "1px solid black" }}
-        >
-          <p style={{ fontSize: "1rem" }}>New Users</p>
-          <div
-            style={{
-              display: "flex",
-            }}
+    <>
+      <div className={Styles.headercard}>
+        <p className={Styles.customp}>{title}</p>
+        <div className={Styles.headerinfocard}>
+          <h1 className={Styles.customh1}>{value}</h1>
+          <button
+            style={{ background: background, color: color }}
+            className={Styles.custombutton}
           >
-            <h1 style={{ flex: "5" }}>8K</h1>
-            <button
-              style={{
-                flex: "1",
-                height: "40px",
-                marginTop: "36px",
-                borderRadius: "50px",
-              }}
-            >
-              +5,2%
-            </button>
-          </div>
-        </Card>
+            {precent}
+          </button>
+        </div>
       </div>
-    </> */
-    // }
+    </>
   );
 }
