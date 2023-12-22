@@ -1,8 +1,5 @@
 import React from 'react';
 import { Col, Image, Layout, Row } from 'antd';
-import Dashboard from '../dashboard'
-import Test from '../Tabs/Tabs'
-import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import Logo from '../../assets/images/Logo_Container.png'
 import {
   UserOutlined,
@@ -18,6 +15,7 @@ import {
 import SearchBar from '../../components/SeachBar';
 import ButtonSlider from '../../components/ButtonSlider';
 import './style.css';
+import { Outlet } from 'react-router-dom';
  
 const { Header, Sider, Content } = Layout;
 
@@ -59,24 +57,29 @@ const buttonData = [
   {
     icon: <HomeOutlined style={styleIcon} />,
     text: 'Dashboard',
+    navigator: '/'
   },
   {
     icon: <CustomerServiceOutlined style={styleIcon} />,
     text: 'Services',
     isShowNotification: true,
     isShowDropdown: true,
+    navigator: '/Services'
   },
   {
     icon: <TagsOutlined style={styleIcon} />,
     text: 'Plans',
+    navigator: '/Plans'
   },
   {
     icon: <KeyOutlined style={styleIcon} />,
     text: 'API keys',
+    navigator: '/APIkeys'
   },
   {
     icon: <SafetyCertificateOutlined style={styleIcon} />,
     text: 'Access Controls',
+    navigator: '/AccessControls'
   },
 ];
 
@@ -105,7 +108,6 @@ const Index: React.FC = () => (
         style={styleSearch}
       />
       {buttonData.map((button, index) => (
-         <Link key={index} to={`/${button.text.toLowerCase()}`}> 
          <ButtonSlider
            key={index}
            type="text"
@@ -115,19 +117,16 @@ const Index: React.FC = () => (
            isShowNotification={button.isShowNotification}
            isShowDropdown={button.isShowDropdown}
            styleTextButton={styleTextButton}
+           navigator={button.navigator}
          />
-       </Link>
       ))}
     </Sider>
     <Layout>
       <Header style={{ backgroundColor: '#4096ff', color: '#fff', textAlign: 'center' }}>
         Header
-      </Header>
+      </Header> 
       <Content style={{ padding: '24px', minHeight: 280 }}>
-      <Routes>
-             <Route path="/" element={<Dashboard />} />
-             <Route path="/tabs" element={<Test />} />
-      </Routes>
+        <Outlet />
       </Content>
     </Layout>
   </Layout>

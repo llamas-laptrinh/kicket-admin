@@ -1,20 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { routes } from './routes';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import Slider from '../pages/dashboard'; 
+import Plans from '../pages/Plans';
+import Services from '../pages/Servicess';
+import APIkey from '../pages/ApiKey';
+import AccessControls from '../pages/AccessControls';
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 
-const Index = () => {
+const App: React.FC = () => {
   return (
-    <div>
-        <Router>
-          <Routes>
-            {routes.map((route) => {
-              return (
-                <Route key={route.path} path={route.path} element = { <route.page/> } />
-              )
-            })}
-          </Routes>
-        </Router>
-    </div>
-  )
-}
+    <Router>
+      <Slider />
+      <Routes>
+        <Route path="/" element={<Outlet />}>
+          <Route path="APIkeys" element={<APIkey />} />
+          <Route path="AccessControls" element={<AccessControls />} />
+          <Route path="Plans" element={<Plans />} />
+          <Route path="Services" element={<Services />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+};
 
-export default Index
+export default App;
