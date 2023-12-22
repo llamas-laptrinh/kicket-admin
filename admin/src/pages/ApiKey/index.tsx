@@ -5,7 +5,7 @@ import test from '../../assets/images/test.jpg'
 
 const index: React.FC = () => {
   return (
-    <div><Image src={test} /></div>
+    <div><Image preview={false} src={test} /></div>
   );
 }
 

@@ -7,7 +7,7 @@ import APIkey from '../pages/ApiKey';
 import AccessControls from '../pages/AccessControls';
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 
-const App: React.FC = () => {
+const Index: React.FC = () => {
   return (
     <Router>
       <Slider />
@@ -24,4 +24,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Index;
