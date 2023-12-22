@@ -1,19 +1,31 @@
-import HomePage from "../pages/HomePage/HomePage";
+import DashBoad from "../pages/dashboard";
+import Services from '../pages/Servicess';
+import Plans from '../pages/Plans';
+import APIkey from '../pages/ApiKey';
+import AccessControls from '../pages/AccessControls'
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
-import Tabs from "../pages/Tabs/Tabs"
-import Dashboard from "../pages/dashboard";
+
+
 export const routes = [
     {
         path: '/',
-        page: HomePage,
+        page: DashBoad,
     },
     {
-        path: '/Dashboard',
-        page: Dashboard,
+        path: '/Services',
+        page: Services,
     },
     {
-        path: '/tabs',
-        page: Tabs,
+        path: '/Plans',
+        page: Plans,
+    },
+    {
+        path: '/APIkeys',
+        page: APIkey,
+    },
+    {
+        path: '/AccessControls',
+        page: AccessControls,
     },
     {
         path: '*',
