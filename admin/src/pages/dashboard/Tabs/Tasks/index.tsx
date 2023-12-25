@@ -11,6 +11,7 @@ const Tasks: React.FC = () => {
                 {
                     category: 'study',
                     cardName: 'card 1',
+                    cardImage: '',
                     assignedUsers: [
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
                         { avatar: 'https://hips.hearstapps.com/hmg-prod/images/dw-burnett-pcoty22-8260-1671143390.jpg?crop=0.668xw:1.00xh;0.184xw,0&resize=640:*' },
@@ -20,9 +21,10 @@ const Tasks: React.FC = () => {
                 {
                     category: 'game',
                     cardName: 'card 2',
+                    cardImage: "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&height=900&width=1600&fit=bounds",
                     assignedUsers: [
-                        { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
-                        { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
+                        { avatar: '' },
+                        { avatar: '' },
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
                     ]
                 },
@@ -34,6 +36,7 @@ const Tasks: React.FC = () => {
                 {
                     category: 'study',
                     cardName: 'card 1',
+                    cardImage: '',
                     assignedUsers: [
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
@@ -43,6 +46,7 @@ const Tasks: React.FC = () => {
                 {
                     category: 'game',
                     cardName: 'card 2',
+                    cardImage: '',
                     assignedUsers: [
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
@@ -52,6 +56,7 @@ const Tasks: React.FC = () => {
                 {
                     category: 'work',
                     cardName: 'card 2',
+                    cardImage: '',
                     assignedUsers: [
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
@@ -65,6 +70,7 @@ const Tasks: React.FC = () => {
                 {
                     category: 'study',
                     cardName: 'card 1',
+                    cardImage: '',
                     assignedUsers: [
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },
                         { avatar: 'https://www.topgear.com/sites/default/files/2022/07/13.jpg' },

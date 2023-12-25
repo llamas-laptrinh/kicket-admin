@@ -1,7 +1,7 @@
 import { Button, Card, Flex } from 'antd';
 import React from 'react'
 import styles from './style.module.css'
-import { UserOutlined, PlusOutlined, CalendarOutlined, PushpinOutlined, FlagOutlined, MoreOutlined } from '@ant-design/icons';
+import { PlusOutlined, CalendarOutlined, PushpinOutlined, FlagOutlined, MoreOutlined } from '@ant-design/icons';
 import type { SizeType } from 'antd/es/config-provider/SizeContext';
 import { card } from '../../../../../types/common';
 const CardComponent: React.FC<{ data: card }> = ({ data }) => {
@@ -15,11 +15,20 @@ const CardComponent: React.FC<{ data: card }> = ({ data }) => {
             >
                 <p>{data.category}</p>
                 <p>{data.cardName}</p>
-                <img className={styles.imageCard} src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&height=900&width=1600&fit=bounds"></img>
-                {data.assignedUsers.map((item) => (
-                    // <UserOutlined className={styles.user_tag} />
-                    <img className={styles.user_tag} src={item.avatar} />
-                )
+                {data.cardImage!='' && 
+                    < img className={styles.imageCard} src={data.cardImage}/>
+                }
+                {data.assignedUsers.map((item) => {
+                    if (item.avatar != '') return (
+                        <img className={styles.user_tag} src={item.avatar} />
+                    )
+                    else return (
+                        <img className={styles.user_tag} src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" />
+
+                    )
+                }
+
+
                 )}
                 <Flex justify="space-between">
                     <div>

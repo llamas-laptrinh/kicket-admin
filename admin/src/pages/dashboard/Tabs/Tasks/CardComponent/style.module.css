@@ -22,4 +22,6 @@
     color: rgba(0,0,0,0.3);
     width: 24px;
     height: 24px;
+    /* text-align: center; */
+    margin: auto;
 }

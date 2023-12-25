@@ -31,6 +31,7 @@ interface assignedUser {
 export interface card {
   category: string;
   cardName: string;
+  cardImage: string;
   assignedUsers: assignedUser[];
 }
 // export card;
