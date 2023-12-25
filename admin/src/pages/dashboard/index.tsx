@@ -11,6 +11,7 @@ import type { MenuProps } from 'antd';
 import { Layout, Menu, theme, Col, Row, Tabs } from 'antd';
 import './styles.css'
 import CardComponent from './CardComponent';
+import Tasks from './Tabs/Tasks';
 import type { TabsProps } from 'antd';
 
 import PolarChart from '../../components/Charts/Polar';
@@ -19,7 +20,7 @@ import MapChart from '../../components/Charts/Map';
 import NestedChart from '../../components/Charts/NestedChart';
 import * as am5 from '@amcharts/amcharts5';
 
-import { dataItems, polarDataItems ,mapDataItems } from '../../types';
+import { dataItems, polarDataItems, mapDataItems } from '../../types';
 const { Header, Content, Footer, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -185,7 +186,6 @@ const Overview: React.FC = () => {
     )
 }
 
-// export default Overview
 
 
 function getItem(
@@ -234,8 +234,8 @@ const Dashboard: React.FC = () => {
         },
         {
             key: '2',
-            label: 'Tab 2',
-            children: 'Content of Tab Pane 2',
+            label: 'Tasks',
+            children: <Tasks />,
         },
         {
             key: '3',
