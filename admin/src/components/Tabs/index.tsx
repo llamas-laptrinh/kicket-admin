@@ -1,36 +1,57 @@
 import React, { useState } from 'react';
-import { Tabs } from 'antd';
-import 'antd/dist/reset.css'
-import './style.css'
+import { Space, Tabs } from 'antd';
+import 'antd/dist/reset.css';
+import './style.css';
+import DateRanger from '../DateRanger';
+
 const { TabPane } = Tabs;
 
-const MyTabs: React.FC = () => {
+interface MyTabsProps {
+  overviewContent?: React.ReactNode;
+  tasksContent?: React.ReactNode;
+  documentContent?: React.ReactNode;
+  teamContent?: React.ReactNode;
+  reportsContent?: React.ReactNode;
+  adminContent?: React.ReactNode;
+}
+
+const MyTabs: React.FC<MyTabsProps> = ({
+  overviewContent,
+  tasksContent,
+  documentContent,
+  teamContent,
+  reportsContent,
+  adminContent,
+}) => {
   const [activeTabKey, setActiveTabKey] = useState('1');
 
   const handleTabChange = (key: string) => {
     setActiveTabKey(key);
   };
+
   return (
-    <Tabs activeKey={activeTabKey} onChange={handleTabChange}>
-      <TabPane tab="Overview" key="1">
-        Content of Tab Pane 1
-      </TabPane>
-      <TabPane tab="Tasks" key="2">
-        Content of Tab Pane 2
-      </TabPane>
-      <TabPane tab="Document" key="3">
-        Content of Tab Pane 3
-      </TabPane>
-      <TabPane tab="Team" key="4">
-        Content of Tab Pane 4
-      </TabPane>
-      <TabPane tab="Reports" key="5">
-        Content of Tab Pane 5
-      </TabPane>
-      <TabPane tab="Admin" key="6">
-        Content of Tab Pane 6
-      </TabPane>
-    </Tabs>
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <Tabs tabBarStyle={{ borderBottom: 'none' }} activeKey={activeTabKey} onChange={handleTabChange}>
+        <TabPane tab="Overview" key="1">
+          <Space>{overviewContent}</Space>
+        </TabPane>
+        <TabPane tab="Tasks" key="2">
+          {tasksContent}
+        </TabPane>
+        <TabPane tab="Document" key="3">
+          {documentContent}
+        </TabPane>
+        <TabPane tab="Team" key="4">
+          {teamContent}
+        </TabPane>
+        <TabPane tab="Reports" key="5">
+          {reportsContent}
+        </TabPane>
+        <TabPane tab="Admin" key="6">
+          {adminContent}
+        </TabPane>
+      </Tabs>
+    </div>
   );
 };
 

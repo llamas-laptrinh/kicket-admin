@@ -57,7 +57,7 @@ const buttonData = [
   {
     icon: <HomeOutlined style={styleIcon} />,
     text: 'Dashboard',
-    navigator: '/'
+    navigator: '/DashBoard'
   },
   {
     icon: <CustomerServiceOutlined style={styleIcon} />,
@@ -85,10 +85,10 @@ const buttonData = [
 
 const Index: React.FC = () => (
   <Layout style={{ minHeight: '100vh' }}>
-    <Sider width={256} style={{ backgroundColor: '#FFFFFF', padding: '14px 16px 24px 16px', justifyContent: 'center' }}>
+    <Sider width={256} style={{ backgroundColor: '#FFFFFF', padding: '14px 16px 24px 16px', justifyContent: 'center', borderRight: '1px solid #F2F4F8' }}>
       <Row>
         <Col span={24}>
-          <Image src={Logo} style={{ width: '224px', height: '39px' }} />
+          <Image preview={false} src={Logo} style={{ width: '224px', height: '39px' }} />
         </Col>
       </Row>
       <Row gutter={[16, 16]} style={{ justifyContent: 'center', marginTop: 20 }}>
@@ -122,10 +122,10 @@ const Index: React.FC = () => (
       ))}
     </Sider>
     <Layout>
-      <Header style={{ backgroundColor: '#4096ff', color: '#fff', textAlign: 'center' }}>
-        Header
+      <Header style={{backgroundColor: '#FFFFFF', fontSize: '42px', padding: '0 20px' }}>
+        <span>Dashboard</span>
       </Header> 
-      <Content style={{ padding: '24px', minHeight: 280 }}>
+      <Content style={{backgroundColor: '#FFFFFF', padding: '24px', minHeight: 280 }}>
         <Outlet />
       </Content>
     </Layout>

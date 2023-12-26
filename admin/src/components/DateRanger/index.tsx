@@ -1,49 +1,48 @@
 import React, { useState } from 'react';
 import { DatePicker, Space } from 'antd';
 import { ArrowRightOutlined, CalendarOutlined } from '@ant-design/icons';
-import './style.css'
+import './style.css';
 
 const DateRanger: React.FC = () => {
-  const [startDate, setStartDate] = useState<string | null>(null);
-  const [endDate, setEndDate] = useState<string | null>(null);
+  const [dateRange, setDateRange] = useState<{ startDate: string | null; endDate: string | null }>({
+    startDate: null,
+    endDate: null,
+  });
 
-  const handleStartDateChange = (date: any, dateString: string) => {
-    setStartDate(dateString);
-  };
-
-  const handleEndDateChange = (date: any, dateString: string) => {
-    setEndDate(dateString);
+  const handleDateChange = (dateType: string) => (date: any, dateString: string) => {
+    setDateRange((prev) => ({ ...prev, [dateType]: dateString }));
   };
 
   const datePickerStyle = {
     border: 'none',
     color: 'black',
-    fontSize: '24px'
+    fontSize: '24px',
+    display: 'flex',
+    alignItems: 'center',
   };
 
   const arrowStyle = {
     background: '#DDE1E6',
     fontSize: '24px',
-    height: '48px',
-    width: '48px',
+    height: '45px',
+    width: '45px',
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
   };
 
   return (
     <Space>
       <DatePicker
-        onChange={handleStartDateChange}
+        onChange={handleDateChange('startDate')}
         placeholder="Start Date"
         style={datePickerStyle}
         suffixIcon={<CalendarOutlined style={{ color: 'black', fontSize: '24px', borderRadius: '50%' }} />}
       />
-      <div style={arrowStyle}>
+      <Space style={arrowStyle}>
         <ArrowRightOutlined />
-      </div>
+      </Space>
       <DatePicker
-        onChange={handleEndDateChange}
+        onChange={handleDateChange('endDate')}
         placeholder="End Date"
         style={datePickerStyle}
         suffixIcon={<CalendarOutlined style={{ color: 'black', fontSize: '24px' }} />}

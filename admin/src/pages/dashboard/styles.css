@@ -1,6 +1,4 @@
-body {
-    
-}
+
 .white-background {
     background-color: white !important;
 }
@@ -10,7 +8,24 @@ body {
 }
 
 .border {
-    border: solid 1px rgba(0, 0, 0, 0.2);
+    border: solid 1px #DDE1E6;
     border-radius: 5px;
-    padding: 5px
+    padding: 5px;
+    height: 355px;
+    margin-top: 20px;
 }
+
+.customCss {
+    display: flex;
+  justify-content: space-between;
+  border: 1px solid #DDE1E6;
+  margin-top: 20px;
+  border-radius: 5px;
+  height: 355px;
+  align-items: center;
+}
+
+.tableChart {
+    width: 55%;
+}
+

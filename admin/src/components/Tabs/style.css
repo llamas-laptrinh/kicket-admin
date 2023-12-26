@@ -1,11 +1,15 @@
 .ant-tabs-tab-btn {
-    color: #001D6C !important; 
+    color: black; 
   }
   .ant-tabs .ant-tabs-tab:hover .ant-tabs-tab-btn {
     color: #001D6C !important;
   }
 :where(.ant-tabs-ink-bar) {
-    background-color: black !important;
+    background-color: #001D6C !important;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #001D6C;
+  text-shadow: 0 0 0.25px currentcolor; 
 }
 
 
