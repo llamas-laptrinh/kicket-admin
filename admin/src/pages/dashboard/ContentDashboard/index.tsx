@@ -1,7 +1,6 @@
 import { Col, Row, Space } from 'antd';
 import React from 'react';
 import MyTabs from '../../../components/Tabs';
-import DateRanger from '../../../components/DateRanger';
 import Infocard from '../Infocard';
 import Gauges from '../../../components/Charts/Gauges';
 import PolarChart from '../../../components/Charts/Polar'
@@ -23,7 +22,7 @@ const customData = [
     value:'8.235k',
     precent:'-1,2%',
     color:'#FFFFFF',
-    background:'#E43551'
+    background:'#FB0007'
   },
   {
     title:'Active Users',
@@ -72,7 +71,6 @@ const polarData = [{
   }
 },
 ];
-
 
 const countryCodes = [
   "AF", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD", "BB", "BY", "BE", "BZ",
@@ -147,8 +145,8 @@ const middleData = [
 const index: React.FC = () => {
 
   const customContend = (
-    <div style={{ marginBottom: 70}}>
-        <Space style={{ display: 'flex', width: 1136, gap: 24}}>
+    <div>
+        <Space style={{ display: 'flex', gap: 24}}>
           {customData.map((data, index) => (
             <Infocard 
             key={index}
@@ -213,10 +211,7 @@ const index: React.FC = () => {
     </div>
   );
   return (
-    <Row style={{ display:'flex', height: 47, width: 1136, justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '1px solid #DDE1E6', flexWrap: 'nowrap'}}>
         <MyTabs overviewContent={customContend}  />
-        <DateRanger />
-    </Row>
   );
 }
 
