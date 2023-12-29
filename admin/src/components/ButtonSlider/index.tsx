@@ -2,8 +2,9 @@ import { Badge, Button, Dropdown, Menu, Space, Typography } from 'antd';
 import React from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import { ButtonProps } from 'antd/lib/button';
 
-interface ButtonSliderProps {
+interface ButtonSliderProps extends ButtonProps {
   type?: 'primary' | 'default' | 'dashed' | 'text' | 'link';
   icon?: React.ReactNode;
   style?: React.CSSProperties;
@@ -13,19 +14,11 @@ interface ButtonSliderProps {
   isShowDropdown?: boolean;
   navigator?: string;
   onSelectButton?: (text: string) => void;
+  onClick?: () => void;
 }
 
-const ButtonSlider: React.FC<ButtonSliderProps> = ({
-  type,
-  icon,
-  isShowDropdown = false,
-  isShowNotification = false,
-  styleTextButton,
-  textbutton,
-  navigator = '',
-  onSelectButton,
-  ...rests
-}) => {
+const ButtonSlider: React.FC<ButtonSliderProps> = (props) => {
+  const { type, icon, style, styleTextButton, textbutton, isShowNotification, isShowDropdown, navigator, onSelectButton, onClick, ...rests } = props;
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -35,6 +28,10 @@ const ButtonSlider: React.FC<ButtonSliderProps> = ({
 
     if (onSelectButton) {
       onSelectButton(textbutton as string);
+    }
+
+    if (onClick) {
+      onClick();
     }
   };
 
@@ -77,7 +74,7 @@ const ButtonSlider: React.FC<ButtonSliderProps> = ({
   };
 
   return (
-    <Button type={type} icon={icon} {...rests} onClick={handleClick}>
+    <Button type={type} icon={icon} style={style} {...rests} onClick={handleClick}>
       <span style={styleTextButton}>{textbutton}</span>
       {isShowNotification && (
         <Space>

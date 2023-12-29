@@ -5,11 +5,12 @@
 }
 .headercard {
   align-items: center;
-  gap: 16px;
+  gap: 26px;
   align-self: stretch;
   padding: 16px;
   border: 1px solid var(--CoolGray-20, #dde1e6);
   background: var(--Default-White, #fff);
+  width: 266px;
 }
 .customp {
   color: var(--coolGray-100, #121619);
@@ -39,4 +40,5 @@
   padding: 2px 12px;
   border-radius: 12px;
   background: var(--CoolGray-10, #f2f4f8);
+  border: none;
 }
