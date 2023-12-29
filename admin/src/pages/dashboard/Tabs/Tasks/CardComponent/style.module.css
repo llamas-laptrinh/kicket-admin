@@ -1,0 +1,27 @@
+.myCard{
+    /* width: 80%; */
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.mt{
+    margin-top: 20px;
+}
+
+.imageCard {
+    width: 100%;
+    margin-left :auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.user_tag{
+    border-radius: 100%;
+    background-color: #dde1e6;
+    color: rgba(0,0,0,0.3);
+    width: 24px;
+    height: 24px;
+    /* text-align: center; */
+    margin: auto;
+}

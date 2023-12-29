@@ -23,3 +23,20 @@ export interface mapDataItem {
   value: number;
 }
 export interface mapDataItems extends Array<mapDataItem> {}
+
+interface assignedUser {
+  avatar: string;
+}
+
+export interface card {
+  category: string;
+  cardName: string;
+  cardImage: string;
+  assignedUsers: assignedUser[];
+}
+// export card;
+
+export interface boardProps {
+  boardName: string;
+  cards: card[];
+} 

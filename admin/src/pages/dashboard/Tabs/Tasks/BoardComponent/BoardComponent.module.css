@@ -1,0 +1,14 @@
+.BoardComponent{
+    /* background-color: '#dde1e6'; */
+    background-color: rgba(0,0,0,0.5);
+    /* margin:10px; */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.add_task_btn{
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+
+}
