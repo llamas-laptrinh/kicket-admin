@@ -1,9 +1,8 @@
-import Index from './router';
+import Index from "./router";
+import Table from "./pages/dashboard/Table";
 
 function App() {
-  return (
-      <Index />
-  )
+  return <Table />;
 }
 
 export default App;
